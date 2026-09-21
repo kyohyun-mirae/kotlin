@@ -28,11 +28,30 @@ class MainActivity : ComponentActivity() {
             }
         }
         week04Class()
+        week04Collections()
     }
-
-
 }
+private fun week04Collections() {
+    println("==============================")
 
+    val fruits = listOf("Apple" , "Banana" , "Orange")
+    var mutablefruits = mutableListOf("Kiwi", "watermelon")
+
+    //imutable
+    //fruits.add()
+
+    //mutable
+    mutablefruits.add("banana")
+
+    println("$fruits")
+    println("$mutablefruits")
+
+    val scores = mapOf("Kim" to 100, "park" to 20, "Lee" to 80)
+    println("$scores")
+
+    scores.forEach { name, age -> println("$name -> $age") }
+    fruits.forEach { fruit -> println("$fruit") }
+}
 private fun week04Class() {
     println("========================")
 
