@@ -27,7 +27,6 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
-        week03Variables()
         week03Functions()
     }
 }
@@ -58,7 +57,7 @@ private fun week03Variables() {
     println("Age: $age, Height: $height, Student: $isStudent")
 
 //    var nickname:String = null
-    var nickname:String? = null
+    var nickname: String? = null
     nickname = "mirae"
     println("Nickname: $nickname ${nickname?.length}")
 }
@@ -86,7 +85,22 @@ private fun week03Functions(){
     println("Sum: ${add(5, -71)}")
     introduce("Kim", 7)
     introduce("Park")
+
+    fun printAll(vip: Boolean,name: String){
+        println("$vip $name")
+    }
+    printAll(true,"dy")
+    printAll(name="dd",vip=true)
+
+    fun printMany(vararg msg: String){
+        for(m in msg){
+            println(m)
+        }
+    }
+
+    printMany("A","B","C","D")
 }
+
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
