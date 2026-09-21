@@ -27,8 +27,35 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
-        week03Functions()
+        week04Class()
     }
+
+
+}
+
+private fun week04Class() {
+    println("========================")
+
+    class Student{
+        var name: String = ""
+        var age: Int = 0
+
+        fun introduce(){
+            println("HI I'm $name and I am $age years old")
+        }
+    }
+    val student1 = Student()
+    student1.name = "추추추"
+    student1.age = 23
+    student1.introduce()
+
+    data class Person(val name: String,val age: Int) //Java toString()
+
+    val person1 = Person("KIM", 23)
+    val person2 = Person("JANG",22)
+
+    println("$person1")
+    println("${person1.name}")
 }
 
 private fun week03Variables() {
