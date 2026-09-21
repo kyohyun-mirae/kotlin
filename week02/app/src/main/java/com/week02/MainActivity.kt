@@ -1,6 +1,7 @@
 package com.week02
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -27,8 +28,8 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
-        week04Class()
-        week04Collections()
+        week04Classes()
+
     }
 }
 private fun week04Collections() {
@@ -75,6 +76,35 @@ private fun week04Class() {
 
     println("$person1")
     println("${person1.name}")
+}
+private fun week04Classes(){
+    Log.d("KotlinWeek04", "== Kotlin Classes ==")
+
+    class Person(val name: String, var age: Int){
+        fun introduce(){
+            Log.d("KotlinWeek04", "안녕하세요, $name ($age 세)입니다.")
+        }
+        fun birthday(){
+            age++
+            Log.d("KotlinWeek04", "$name 의 생일! 이제 $age 세...")
+        }
+    }
+    val person1 = Person("홍길동", 27)
+    person1.introduce()
+    person1.birthday()
+
+    class Animal(var species: String){
+        var weight: Double = 0.0
+        constructor(species: String, weight: Double) : this(species){
+            this.weight = weight
+            Log.d("KotlinWeek04", "$species 의 무게 : $weight kg")
+        }
+        fun makeSound(){
+            Log.d("KotlinWeek04", "$species 가 소리를 냅니다.")
+        }
+    }
+    val puppy = Animal("웰시코기", 10.5)
+    puppy.makeSound()
 }
 
 private fun week03Variables() {
